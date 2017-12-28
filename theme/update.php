@@ -29,7 +29,7 @@ if(function_exists('wp_get_theme')){
     $theme_data = wp_get_theme(get_option('template'));
     $theme_version = $theme_data->Version;  
 } else {
-    $theme_data = get_theme_data( TEMPLATEPATH . '/style.css');
+    $theme_data = wp_get_theme( TEMPLATEPATH . '/style.css');
     $theme_version = $theme_data['Version'];
 }    
 $theme_base = get_option('template');
@@ -96,4 +96,3 @@ function my_theme_api_call($def, $action, $args) {
 
 if (is_admin())
 	$current = get_transient('update_themes');
-?>
