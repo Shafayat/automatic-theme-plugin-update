@@ -7,8 +7,7 @@
 
 ## General Info
 
-For themes and plugins that can't be submitted to official WordPress repository, ie ... commercial themes/plugins/, non-gpl licensed, written for one client.
-
+For themes that can't be submitted to official WordPress repository or you get bored with waiting for months for you theme to be approved in wordpress.org
 ### Folder structure
 * api (Folder to upload to server where updates will be housed)
     * .htaccess (set Options+Indexes to allow checking to work properly)
@@ -20,12 +19,7 @@ For themes and plugins that can't be submitted to official WordPress repository,
 
 * update (default folder for holding theme and plugin zip files)
     * .htaccess (prevents indexing and viewing of any zip files in directory)
-
-
-* plugin (folder for adding plugin update checking)
-    * test-plugin-update (simple plugin folder to show how update functions work)
-        * test-plugin-update.php (example plugin that only checks for updates to server)
-
+    
 
 * theme (folder for theme update checking)
     * update.php (file that can be included from functions.php of theme to check for updates)
@@ -36,16 +30,15 @@ For themes and plugins that can't be submitted to official WordPress repository,
 
 *Change $api_url to your api server url in:*
 
-    /plugin/test-plugin-update/test-plugin-update.php 
     /theme/update.php	
 
 ## Adding new versions
 
 Edit the packages.php under api folder on your server.  Commented thoroughly throughout with sections that need to be changed to reflect themes/plugins that are to be updated.  
 
-## Adding additional themes/plugins
+## Adding additional themes
 
-Simply create another $package array with the key of the new theme/plugin slug and add all the appropriate info.  When releasing the theme/plugin make sure that functions and variables are prefixed to prevent errors and allow multiple themes/plugins to be updated.
+Simply create another $package array with the key of the new theme slug and add all the appropriate info.  When releasing the theme make sure that functions and variables are prefixed to prevent errors and allow multiple themes to be updated.
 
 ## Child theme support
 
